@@ -4,15 +4,12 @@ ppPoisson = function (halflife, n) {
   barplot(y);
   return (y);
 }
+ppPoisson(0.1, 800)
+
 ppGeometric = function (p, n) {
   x = 1:n
   y = dgeom(x, p);
   barplot(y);
   return (y);
 }
-x = scan("my_file.txt");
-
-ppGeometric(1/36, 800);
-ppPoisson(0.1, 800)
-
-
+ppGeometric(1/36, 800)
