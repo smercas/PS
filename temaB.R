@@ -45,9 +45,9 @@ ML_Binom = function(n, p, h, k) {
 }
 ML_Binom(100, 0.3, 20, 40)
 #P(X<40)
-pbinom(40, 100, 0.3) - factorial(100) / (factorial(40) * factorial(60)) * 0.3 ^ 40 * (1 - 0.3) ^ 60
+pbinom(40, 100, 0.3) - dbinom(40, 100, 0.3)
 pbinom(39, 100, 0.3)
 #P(X<20)
-pbinom(20, 100, 0.3) - factorial(100) / (factorial(20) * factorial(80)) * 0.3 ^ 20 * (1 - 0.3) ^ 80
+pbinom(20, 100, 0.3) - dbinom(20, 100, 0.3)
 pbinom(19, 100, 0.3)
 cat(pbinom(39, 100, 0.3) - pbinom(19, 100, 0.3))

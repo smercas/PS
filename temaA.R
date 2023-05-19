@@ -31,7 +31,7 @@ threeplots(3, 10, 0.4, 1)
 #            = p / (2 * p - p ^ 2) = 1 / (2 - p)
 #P(X == a) = (1 - p) ^ (a - 1) * p
 geom_stuff = function(p) {
-  cat("P(x = odd) = ", 1 / (2 - p), "\n")
+  cat("P(x = odd) = ", 1 / (2 - p), "\n") #you can calculate the sum of dgeoms(dgeom(x) == P[X == x])
   cat("P(x >= 4) = ", pgeom(4, p, lower.tail = FALSE) + (1 - p) ^ 3 * p, "\n")
   cat("P(x <= 20) = ", pgeom(20, p), "\n")
 }
