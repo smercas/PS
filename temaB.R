@@ -1,4 +1,4 @@
-#1
+#I
 LLN_Geom = function(n, p) {
   return (c(mean(rgeom(n, p)), 1 / p));
 }
@@ -7,7 +7,7 @@ LLN_Geom(10000, 0.6)
 LLN_Geom(100000, 0.6)
 LLN_Geom(500000, 0.8)
 
-#2
+#II
 CLT_Student = function(r, n, N, z) {
   expectation = 0
   st_dev = sqrt(r / (r - 2))
@@ -34,7 +34,7 @@ true_prob = pnorm(1.5)
 relative_error = abs(estimated_prob - true_prob) / true_prob
 relative_error
 
-#3
+#III
 ML_Binom = function(n, p, h, k) {
   expectation = n * p
   standard_deviation = sqrt(n * p * (1 - p))

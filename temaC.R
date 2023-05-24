@@ -1,22 +1,22 @@
 #I
-#sphere_volume = pi * r ^ 2 / 2
-#cube_volume = (2 * sqrt(r)) ^ 2 * r = 8 * r ^ 3
-paraboloidal_dish_volume = function(N, r) {
+#sphere_volume = pi * a ^ 2 / 2
+#cube_volume = (2 * sqrt(a)) ^ 2 * a = 8 * a ^ 3
+paraboloidal_dish_volume = function(N, a) {
   N_C = 0
   for (i in 1:N) {
-    x1 = runif(1, -sqrt(r), sqrt(r))
-    x2 = runif(1, -sqrt(r), sqrt(r))
-    x3 = runif(1, 0, r)
+    x1 = runif(1, -sqrt(a), sqrt(a))
+    x2 = runif(1, -sqrt(a), sqrt(a))
+    x3 = runif(1, 0, a)
     if (x1 * x1 + x2 * x2 <= x3) {
       N_C = N_C + 1
     }
   }
-  return ((2 * sqrt(r)) ^ 2 * r * N_C / N)
+  return ((2 * sqrt(a)) ^ 2 * a * N_C / N)
 }
-r = 2
-paraboloidal_dish_volume(10000, r)
-MC_volume = paraboloidal_dish_volume(100000, r)
-volume = pi * r ^ 2 / 2
+a = 2
+paraboloidal_dish_volume(100000, a)
+MC_volume = paraboloidal_dish_volume(100000, a)
+volume = pi * a ^ 2 / 2
 abs_err = abs(MC_volume - volume)
 rel_err = abs_err/volume
 cat("estimated area is", MC_volume)
@@ -37,7 +37,6 @@ quadrilateral_area = function(N) {
   }
   return (4 * 3 * N_C / N)
 }
-r = 2
 quadrilateral_area(100000)
 MC_area = quadrilateral_area(100000)
 area = 9
@@ -86,7 +85,7 @@ cat("estimated area is", MC_integral)
 cat("absolute error is", abs_err)
 cat("relative error is", rel_err)
 
-#III.a
+#III.c
 MC_integration = function(N, a, b) {
   sum = 0
   for (i in 1:N) {
@@ -106,6 +105,7 @@ cat("absolute error is", abs_err)
 cat("relative error is", rel_err)
 
 #IV
+#IV.a
 MC_fake = function(m, n, p, q) {
   fake_users = m
   days = 0
@@ -154,6 +154,7 @@ days
 #if at some point there are 25000 fake users the deleted accounts will mostly be replaced
 #if the number of fake users at the beginning of the loop is less than 25000 the number of fake users will increase until approx 25000
 
+#IV.b
 MC_fake_days = function(m, n, p, q, d) {
   fake_users = m
   days = 0
@@ -172,6 +173,7 @@ MC_fake_days = function(m, n, p, q, d) {
 }
 MC_fake_days(100000, 500, 0.5, 0.01, 40)
 
+#IV.c
 MC_prob = function(N, m, n, p, q, d) {
   s = 0;
   for (i in 1:N) {
