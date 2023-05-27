@@ -38,10 +38,6 @@ element_ith = function(i, A) {
     }
   }
 }
-element_ith(54, x)
-sort(x)[55]
-element_ith(55, x)
-sort(x)[56]
 
 #III
 MC_median = function(S, a) {
