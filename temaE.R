@@ -44,5 +44,5 @@ test_proportion = function(alpha, n, successes, p0, hyp) {
     }
   }
 }
-test_proportion(0.01, 153, 17, 0.12, "r")
-test_proportion(0.05, 153, 17, 0.12, "r")
+test_proportion(0.01, 153, 17, 0.12, "l")
+test_proportion(0.05, 153, 17, 0.12, "l")
