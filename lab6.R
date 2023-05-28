@@ -150,4 +150,4 @@ test_proportion = function(alpha, n, successes, p0, hyp) {
 test_proportion(0.01, 100, 63, 0.6, "r")
 
 #IV.2
-test_proportion(0.05, 150, 20, 0.10, "s")
+test_proportion(0.05, 150, 20, 0.10, "r")
